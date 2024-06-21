@@ -1,0 +1,74 @@
+---
+import Base from "../layouts/Base.astro";
+import TextBlock from "../components/TextBlock.astro";
+import ModuleCard from "../components/ModuleCard.astro";
+
+interface Module {
+  url?: string;
+  title?: string;
+  description?: string;
+}
+
+const modules: Module[] = [
+  {
+    title: "Gestion de Inventario",
+    description:
+      "Se encarga de la administración de los Ingresos y Egresos del inventario, vinculado con pedidos y proveedores.",
+    url: "../../public/modulos/m1.png",
+  },
+  {
+    title: "Gestión de Finanzas",
+    description:
+      "Se encarga de la administración de los Ingresos y Egresos del inventario, vinculado con pedidos y proveedores.",
+    url: "../../public/modulos/m2.png",
+  },
+  {
+    title: "Generación de Facturas",
+    description:
+      "Se encarga de la administración de los Ingresos y Egresos del inventario, vinculado con pedidos y proveedores.",
+    url: "../../public/modulos/m3.png",
+  },
+  {
+    title: "Gestión de Recursos Humanos",
+    description:
+      "Administración de múltiples almacenes con herramientas para visualizar y actualizar el stock y reubicar productos.",
+    url: "../../public/modulos/m4.png",
+  },
+  {
+    title: "Gestión de Clientes",
+    description:
+      "Administración de múltiples almacenes con herramientas para visualizar y actualizar el stock y reubicar productos.",
+    url: "../../public/modulos/m5.png",
+  },
+  {
+    title: "Gestión de Almacenes",
+    description:
+      "Administración de múltiples almacenes con herramientas para visualizar y actualizar el stock y reubicar productos.",
+    url: "../../public/modulos/m6.png",
+  },
+];
+---
+
+<Base>
+  <section id="modulos" class="flex justify-center items-center py-16">
+    <div
+      class="container mx-auto space-y-8 flex flex-col justify-center items-center text-center"
+    >
+      <TextBlock
+        title="Transformación Digital para tu Empresa"
+        subtitle="Optimiza cada aspecto de tu gestión empresarial con módulos integrados."
+      />
+      <div class="grid grid-cols-2 gap-4 p-8">
+        {
+          modules.map((module) => (
+            <ModuleCard
+              title={module.title}
+              description={module.description}
+              url={module.url}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

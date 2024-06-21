@@ -1,0 +1,88 @@
+---
+import Base from "../layouts/Base.astro";
+import TextBlock from "../components/TextBlock.astro";
+import Button from "../components/BtnPrimary.astro";
+import BenefitsCard from "../components/BenefitCard.astro";
+
+const Modules: string[] = [
+  "Inventario",
+  "Fcturacion",
+  "Finanzas",
+  "Empleados",
+  "Clienes",
+  "Almacenes",
+];
+
+interface Benefits {
+  title: string;
+  url: string;
+  description: string;
+}
+
+const benefits: Benefits[] = [
+  {
+    title: "Aumento de Productividad",
+    url: "../../public/beneficios/material-symbols--productivity.svg",
+    description:
+      "Simplifica y optimiza procesos, liberando tiempo para actividades estratégicas.",
+  },
+  {
+    title: "Claridad Financiera",
+    url: "../../public/beneficios/bx--dollar.svg",
+    description:
+      "Proporciona una visión completa del estado financiero de la empresa.",
+  },
+  {
+    title: "Mejor Toma de Decisiones",
+    url: "../../public/beneficios/material-symbols--finance-rounded.svg",
+    description:
+      "Acceso rápido y preciso a datos críticos, facilitando decisiones informadas.",
+  },
+  {
+    title: "Relación con Clientes",
+    url: "../../public/beneficios/material-symbols--finance-mode.svg",
+    description:
+      "Centraliza la información de clientes, mejorando la fidelización con servicios personalizados.",
+  },
+];
+---
+
+<Base>
+  <section id="hero" class="flex justify-center items-center pt-32 pb-40">
+    <div
+      class="container mx-auto space-y-8 flex flex-col justify-center items-center text-center"
+    >
+      <img class="w-72" src="../../public/logo.png" alt="" class="" />
+      <TextBlock
+        title="El Mejor sistema para la gestión de tu empresa."
+        subtitle="¡Fácil y practico, sin ser un experto en tecnología!"
+      />
+
+      <div class="flex space-x-4 [&_>*]:hero-card">
+        {
+          Modules.map((module) => (
+            <div class="min-w-16 py-4 px-8 rounded border-2 border-sky-700">
+              {module}
+            </div>
+          ))
+        }
+      </div>
+      <Button text="Comenzar Ahora ¡Es Gratis!" />
+    </div>
+  </section>
+  <section id="benefits" class="">
+    <div class="py-16 container mx-auto space-y-8 text-center mb-28">
+      <TextBlock
+        title="Beneficios Clave de Implementar SwiftBiz"
+        subtitle="Impulsa tu empresa hacia la eficiencia y el crecimiento con SwiftBiz."
+      />
+      <div class="flex space-x-8 justify-center px-12 [&_>_*]:benefits-card">
+        {
+          benefits.map(({ title, url, description }) => (
+            <BenefitsCard title={title} url={url} description={description} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,99 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base>
+  <section id="contact" class="flex justify-center items-center">
+    <div
+      class="container mx-auto flex flex-col justify-center items-center text-center"
+    >
+      <div id="contacto" class="">
+        <!-- EMPIEZA EL FORM -->
+        <div class="container mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-sky-950">
+            ¿Tienes alguna pregunta?
+          </h2>
+          <form
+            class="space-y-4 [&>_div]:flex [&>_div]:space-x-4 [&_>div>input]:contact_input"
+          >
+            <div>
+              <label for="nombre" class="block">Nombre</label>
+              <input
+                class="flex-1 border border-sky-200 px-4 py-1 rounded"
+                type="text"
+                id="nombre"
+                class=""
+              />
+            </div>
+            <div>
+              <label for="telefono" class="block">Número de teléfono</label>
+              <input
+                class="flex-1 border border-sky-200 px-4 py-1 rounded"
+                type="tel"
+                id="telefono"
+              />
+            </div>
+            <div>
+              <label for="correo" class="block"
+                >Correo electrónico de la empresa</label
+              >
+              <input
+                class="flex-1 border border-sky-200 px-4 py-1 rounded"
+                type="email"
+                id="correo"
+              />
+            </div>
+            <div>
+              <label for="asunto" class="block">Asunto</label>
+              <input
+                class="flex-1 border border-sky-200 px-4 py-1 rounded"
+                type="text"
+                id="asunto"
+              />
+            </div>
+            <div>
+              <label for="tamano" class="block">Tamaño de tu empresa</label>
+              <input
+                class="flex-1 border border-sky-200 px-4 py-1 rounded"
+                type="text"
+                id="tamano"
+              />
+            </div>
+            <div>
+              <label for="pregunta" class="block">Pregunta</label>
+              <input
+                class="flex-1 border border-sky-200 px-4 py-1 rounded"
+                type="text"
+                id="pregunta"
+              />
+            </div>
+            <button
+              type="submit"
+              class="bg-sky-900 text-white px-12 py-1 rounded"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+        <!-- TERMINA EL FORM -->
+        <!-- EMPIEZA REDES SOCIALES -->
+        <div class="">
+          <h1 class="text-2xl font-bold mb-2 mt-16 text-sky-950">
+            Nuestras Redes Sociales
+          </h1>
+          <hr class="border-gray-200 mb-4" />
+          <div
+            class="flex p-4 space-x-14 [&_>img]:w-6 [&_>img]:cursor-pointer justify-center items-center"
+          >
+            <img src="/public/smnegro.svg" />
+            <img src="/public/smnegro.svg" />
+            <img src="/public/smnegro.svg" />
+            <img src="/public/smnegro.svg" />
+            <img src="/public/smnegro.svg" />
+          </div>
+        </div>
+        <!-- TERMINA REDES SOCIALES -->
+      </div>
+    </div>
+  </section>
+</Base>

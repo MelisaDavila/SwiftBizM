@@ -1,0 +1,75 @@
+---
+import Base from "../layouts/Base.astro";
+import TextBlock from "../components/TextBlock.astro";
+---
+
+<Base>
+  <section id="modulos" class="flex justify-center items-center py-14">
+    <div
+      class="container mx-auto space-y-8 flex flex-col justify-center items-center text-center"
+    >
+      <TextBlock
+        title="Escoge la Planificación Ideal para tu Empresa"
+        subtitle="Selecciona el plan que mejor se adapte a tus necesidades y lleva tu negocio al siguiente nivel con SwiftBiz."
+      />
+
+      <div class="flex space-x-10 p-8">
+        <div
+          class="p-4 rounded border border-sky-300 flex flex-col items-center max-w-64 space-y-8"
+        >
+          <h3 class="font-bold">Prueba Gratuita</h3>
+          <div class="flex items-center">
+            <span class="text-6xl">0</span>
+            <img class="w-20" src="/public/bx--dollar.svg" alt="" />
+          </div>
+          <p class="text-sm text-gray-500">
+            Se encarga de la administración de los Ingresos y Egresos del
+            inventario, vinculado con pedidos y proveedores.
+          </p>
+          <button class="py-1 px-6 rounded text-sky-700 border border-sky-700">
+            Comenzar Ahora
+          </button>
+        </div>
+        <div
+          class="py-4 px-6 rounded border border-sky-300 flex flex-col items-center max-w-64 space-y-8 bg-sky-50"
+        >
+          <h3 class="font-bold text-sky-900 text-xl">Suscripción Anual</h3>
+          <div class="">
+            <div class="flex items-center">
+              <span class="text-6xl">8</span>
+              <img class="w-20" src="/public/bx--dollar.svg" alt="" />
+            </div>
+            <span class="font-bold">Mensual</span>
+          </div>
+
+          <p class="text-sm text-gray-500">
+            Se encarga de la administración de los Ingresos y Egresos del
+            inventario, vinculado con pedidos y proveedores.
+          </p>
+          <button class="py-2 px-6 rounded bg-sky-900 text-white">
+            Comenzar Ahora
+          </button>
+        </div>
+        <div
+          class="p-4 rounded border border-sky-300 flex flex-col items-center max-w-64 space-y-8"
+        >
+          <h3 class="font-bold">Suscripción mensual</h3>
+          <div class="">
+            <div class="flex items-center">
+              <span class="text-6xl">10</span>
+              <img class="w-20" src="/public/bx--dollar.svg" alt="" />
+            </div>
+            <span class="font-bold">Mensual</span>
+          </div>
+          <p class="text-sm text-gray-500">
+            Se encarga de la administración de los Ingresos y Egresos del
+            inventario, vinculado con pedidos y proveedores.
+          </p>
+          <button class="py-1 px-6 rounded text-sky-700 border border-sky-700">
+            Comenzar Ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

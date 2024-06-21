@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title?: string;
+  url?: string;
+  description?: string;
+}
+
+const { title, url, description } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center space-y-4 p-4 max-w-60 rounded-sm border border-sky-900 bg-white"
+>
+  <h3 class="font-bold">{title}</h3>
+  <div class="bg-sky-950 w-16 h-14 rounded-md flex justify-center items-center">
+    <img class="w-10" src={url} alt="" />
+  </div>
+  <p class="text-xs">{description}</p>
+</div>
