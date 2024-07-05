@@ -47,9 +47,26 @@ const modules: Module[] = [
     url: "../../public/modulos/m6.png",
   },
 ];
+
+const handleClick = (module: Module) => {
+  const router = useRouter();
+  router.push(`/${module.title.toLowerCase()}`);
+};
 ---
 
-<Base>
+<div class="grid grid-cols-2 gap-4 p-8">
+  {
+    modules.map((module) => (
+      <ModuleCard
+        title={module.title}
+        description={module.description}
+        url={module.url}
+        onClick={() => handleClick(module)}
+      />
+    ))
+  }
+</div>
+<!-- <Base>
   <section id="modulos" class="flex justify-center items-center py-16">
     <div
       class="container mx-auto space-y-8 flex flex-col justify-center items-center text-center"
@@ -71,4 +88,4 @@ const modules: Module[] = [
       </div>
     </div>
   </section>
-</Base>
+</Base> -->
