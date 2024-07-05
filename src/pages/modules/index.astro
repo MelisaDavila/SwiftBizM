@@ -1,12 +1,13 @@
 ---
-import Base from "../layouts/Base.astro";
-import TextBlock from "../components/TextBlock.astro";
-import ModuleCard from "../components/ModuleCard.astro";
+import Base from "../../layouts/Base.astro";
+import TextBlock from "../../components/TextBlock.astro";
+import ModuleCard from "../../components/ModuleCard.astro";
 
 interface Module {
   url?: string;
   title?: string;
   description?: string;
+  nameRoute?: string;
 }
 
 const modules: Module[] = [
@@ -14,59 +15,48 @@ const modules: Module[] = [
     title: "Gestion de Inventario",
     description:
       "Se encarga de la administración de los Ingresos y Egresos del inventario, vinculado con pedidos y proveedores.",
-    url: "../../public/modulos/m1.png",
+    url: "/public/images/modulos/m1.png",
+    nameRoute: "inventario",
   },
   {
     title: "Gestión de Finanzas",
     description:
       "Se encarga de la administración de los Ingresos y Egresos del inventario, vinculado con pedidos y proveedores.",
-    url: "../../public/modulos/m2.png",
+    url: "/public/images/modulos/m2.png",
+    nameRoute: "finanzas",
   },
   {
     title: "Generación de Facturas",
     description:
       "Se encarga de la administración de los Ingresos y Egresos del inventario, vinculado con pedidos y proveedores.",
-    url: "../../public/modulos/m3.png",
+    url: "/public/images/modulos/m3.png",
+    nameRoute: "facturacion",
   },
   {
     title: "Gestión de Recursos Humanos",
     description:
       "Administración de múltiples almacenes con herramientas para visualizar y actualizar el stock y reubicar productos.",
-    url: "../../public/modulos/m4.png",
+    url: "/public/images/modulos/m4.png",
+    nameRoute: "empleados",
   },
   {
     title: "Gestión de Clientes",
     description:
       "Administración de múltiples almacenes con herramientas para visualizar y actualizar el stock y reubicar productos.",
-    url: "../../public/modulos/m5.png",
+    url: "/public/images/modulos/m5.png",
+    nameRoute: "clientes",
   },
   {
     title: "Gestión de Almacenes",
     description:
       "Administración de múltiples almacenes con herramientas para visualizar y actualizar el stock y reubicar productos.",
-    url: "../../public/modulos/m6.png",
+    url: "/public/images/modulos/m6.png",
+    nameRoute: "almacenes",
   },
 ];
-
-const handleClick = (module: Module) => {
-  const router = useRouter();
-  router.push(`/${module.title.toLowerCase()}`);
-};
 ---
 
-<div class="grid grid-cols-2 gap-4 p-8">
-  {
-    modules.map((module) => (
-      <ModuleCard
-        title={module.title}
-        description={module.description}
-        url={module.url}
-        onClick={() => handleClick(module)}
-      />
-    ))
-  }
-</div>
-<!-- <Base>
+<Base>
   <section id="modulos" class="flex justify-center items-center py-16">
     <div
       class="container mx-auto space-y-8 flex flex-col justify-center items-center text-center"
@@ -81,11 +71,12 @@ const handleClick = (module: Module) => {
             <ModuleCard
               title={module.title}
               description={module.description}
-              url={module.url}
+              urlImage={module.url}
+              nameRoute={module.nameRoute}
             />
           ))
         }
       </div>
     </div>
   </section>
-</Base> -->
+</Base>

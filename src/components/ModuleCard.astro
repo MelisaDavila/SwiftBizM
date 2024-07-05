@@ -1,17 +1,20 @@
 ---
 export interface Props {
   title?: string;
-  url?: string;
+  urlImage?: string;
   description?: string;
+  nameRoute?: string;
 }
 
-const { title, url, description } = Astro.props;
+const { title, urlImage, description, nameRoute } = Astro.props;
 ---
 
-<div class="p-4 rounded border border-sky-300 flex">
-  <img class="h-16" src={url} alt={title} />
-  <div class="text-start ml-4">
-    <h3 class="font-bold">{title}</h3>
-    <p class="text-sm text-gray-500">{description}</p>
+<a class="" href=`/modules/${nameRoute}`>
+  <div class="p-4 rounded border border-sky-300 flex">
+    <img class="h-16" src={urlImage} alt={title} />
+    <div class="text-start ml-4">
+      <h3 class="font-bold">{title}</h3>
+      <p class="text-sm text-gray-500">{description}</p>
+    </div>
   </div>
-</div>
+</a>

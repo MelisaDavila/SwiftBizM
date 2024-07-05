@@ -1,0 +1,74 @@
+---
+import Base from "../../layouts/Base.astro";
+
+export const getStaticPaths = () => {
+  return [
+    {
+      params: {
+        moduleS: "inventario",
+        imagePath: "/public/images/modulos/m1.png",
+      },
+    },
+    {
+      params: {
+        moduleS: "facturacion",
+        imagePath: "public/images/modulos/m2.png",
+      },
+    },
+    {
+      params: {
+        moduleS: "finanzas",
+        imagePath: "public/images/modulos/m3.png",
+      },
+    },
+    {
+      params: {
+        moduleS: "empleados",
+        imagePath: "public/images/modulos/m4.png",
+      },
+    },
+    {
+      params: {
+        moduleS: "clientes",
+        imagePath: "public/images/modulos/m5.png",
+      },
+    },
+    {
+      params: {
+        moduleS: "almacenes",
+        imagePath: "/public/images/social_media1.svg",
+      },
+    },
+  ];
+};
+
+const { moduleS, imagePath } = Astro.params;
+---
+
+<!-- 
+
+DOCUMENTACION RUTAS DINAMICAS: https://docs.astro.build/en/guides/routing/#dynamic-routes
+TUTPOTIAL: https://www.youtube.com/watch?v=-L0G_o9SVf0
+
+-->
+<Base>
+  <div class="container mx-auto h-full w-full flex justify-center items-center">
+    <div class="border-sky-600 border-2 p-8 mx-16 space-y-4">
+      <h1 class="font-bold text-xl text-sky-500 mx-auto">
+        Bienvenido al Modulo de {moduleS}
+      </h1>
+      <p>{imagePath}</p>
+      <img src={imagePath} alt="IMG" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
+        consectetur, amet cumque id voluptatibus consequatur! Corporis libero a,
+        quia accusantium tenetur neque nisi asperiores, eveniet voluptate
+        laboriosam atque explicabo delectus? consectetur, amet cumque id
+        voluptatibus consequatur! Corporis libero a, quia accusantium tenetur
+        neque nisi asperiores, eveniet voluptate laboriosam atque explicabo
+        delectus?
+      </p>
+    </div>
+  </div>
+</Base>;
+
